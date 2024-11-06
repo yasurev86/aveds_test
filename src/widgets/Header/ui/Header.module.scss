@@ -1,0 +1,37 @@
+.wrapper{
+	height: var(--header-height, 80px);
+	border-bottom: 1px solid black;
+
+	--padding: 70px;
+}
+
+.inner{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 var(--padding);
+	width: 1440px;
+	max-width: 100%;
+	margin: 0 auto;
+	height: 100%;
+	gap: 47px;
+}
+
+.logo{
+	width: 57px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav{
+	display: flex;
+	justify-content: flex-end;
+	gap: 16px;
+	font-family: $fOpenSans;
+	flex: 1;
+	a{
+		text-decoration: none;
+		padding: 10px;
+	}
+}

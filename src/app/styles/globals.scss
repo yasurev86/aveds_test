@@ -1,6 +1,7 @@
 :root{
 	--main-padding-y: 80px;
 	--content-padding: 10px;
+	--sections-gap: 80px;
 
 	--header-height: 80px;
 
@@ -33,4 +34,10 @@ button{
 	max-width: calc(100% - var(--content-padding, 10px) * 2);
 	margin: 0 auto;
 	padding: var(--main-padding-y) 0;
+
+	section{
+		& + section{
+			margin-top: var(--sections-gap);
+		}
+	}
 }
