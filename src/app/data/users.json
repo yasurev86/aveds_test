@@ -1,0 +1,22 @@
+[
+	{
+		"login": "yasurev86",
+		"password": "qwerty",
+		"name": "Михаил"
+	},
+	{
+		"login": "user1",
+		"password": "qwerty1",
+		"name": "Сергей"
+	},
+	{
+		"login": "user2",
+		"password": "qwerty2",
+		"name": "Владислав"
+	},
+	{
+		"login": "user3",
+		"password": "qwerty3",
+		"name": "Тимофей"
+	}
+]

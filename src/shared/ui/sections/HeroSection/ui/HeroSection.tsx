@@ -23,7 +23,6 @@ const HeroSection: FC<IProps> = ({
 				<div className={c.btns}>
 					{primaryBtn && (
 						<Btn
-							use={'accent'}
 							href={primaryBtn.href}
 							onClick={primaryBtn.onClick}
 						>

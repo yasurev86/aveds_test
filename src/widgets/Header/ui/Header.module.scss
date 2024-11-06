@@ -33,5 +33,23 @@
 	a{
 		text-decoration: none;
 		padding: 10px;
+		transition: .2s color ease-in-out;
+		@include hover{
+			color: $accent;
+		}
+	}
+}
+
+/* 992px */
+@media screen and (max-width: 1400px){
+	.wrapper{
+		--padding: var(--content-padding)
+	}
+}
+
+/* 480px */
+@media screen and (max-width: 767px){
+	.inner{
+		gap: 0;
 	}
 }

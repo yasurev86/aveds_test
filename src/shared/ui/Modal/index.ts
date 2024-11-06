@@ -1,2 +1,2 @@
 export { default } from './ui/Modal';
-export * from './store/store';
+export * from './store';

@@ -1,12 +1,12 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { IUser } from '@/entities/User';
+import { IUser } from '../model/IUser';
 
 interface IUserStore {
 	isLogged: boolean;
 	data?: IUser;
-	login: (data: IUser) => void;
-	logout: () => void;
+	logIn: (data: IUser) => void;
+	logOut: () => void;
 }
 
 // По дефолту персист хранит в localStorage
@@ -15,8 +15,8 @@ export const useUserStore = create<IUserStore>()(
 		set => ({
 			isLogged: false,
 			data: undefined,
-			login: (data: IUser) => set(() => ({ isLogged: true, data })),
-			logout: () => set(() => ({ isLogged: false, data: undefined })),
+			logIn: (data: IUser) => set(() => ({ isLogged: true, data })),
+			logOut: () => set(() => ({ isLogged: false, data: undefined })),
 		}),
 		{
 			name: 'user-storage',

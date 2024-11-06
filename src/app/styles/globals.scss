@@ -23,6 +23,39 @@ button{
 	cursor: pointer;
 }
 
+img {
+	max-width: 100%;
+	width: 100%;
+	vertical-align: bottom;
+}
+
+span,
+p,
+a,
+input,
+button {
+	font-size: inherit;
+}
+
+span,
+p,
+a {
+	font-weight: inherit;
+	letter-spacing: inherit;
+	line-height: inherit;
+	color: inherit;
+}
+
+input,
+textarea {
+	border: unset;
+	min-width: 1px;
+}
+
+a {
+	text-decoration: none;
+}
+
 * {
 	box-sizing: border-box;
 	padding: 0;
@@ -39,5 +72,14 @@ button{
 		& + section{
 			margin-top: var(--sections-gap);
 		}
+	}
+}
+
+
+/* 480px */
+@media screen and (max-width: 767px){
+    :root{
+		--sections-gap: 11px;
+		--main-padding-y: 37px;
 	}
 }

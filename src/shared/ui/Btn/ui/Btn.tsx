@@ -4,17 +4,27 @@ import clsx from 'clsx';
 import FullSizeLink from '@/shared/ui/FullSizeLink';
 
 type IProps = {
-	use: 'accent' | 'secondary';
+	use?: 'accent' | 'secondary';
 	href?: string;
+	isLoading?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
-const Btn: FC<IProps> = ({ use, href, className, children, ...props }) => {
+const Btn: FC<IProps> = ({
+	use = 'accent',
+	href,
+	isLoading,
+	disabled,
+	className,
+	children,
+	...props
+}) => {
 	return (
 		<button
 			className={clsx(c.wrapper, c[`use--${use}`], className)}
+			disabled={disabled || isLoading}
 			{...props}
 		>
 			{href && <FullSizeLink href={href} />}
-			{children}
+			{isLoading ? <>Загрузка...</> : children}
 		</button>
 	);
 };

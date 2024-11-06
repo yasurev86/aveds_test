@@ -1,0 +1,23 @@
+.wrapper {
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(var(--columns-count), 1fr);
+
+	--columns-count: 3;
+}
+
+/* 768px */
+@media screen and (max-width: 991px){
+    .wrapper{
+		--columns-count: 2;
+	}
+}
+
+/* 480px */
+@media screen and (max-width: 767px){
+	.wrapper{
+		padding: 0 14px;
+
+		--columns-count: 1;
+	}
+}

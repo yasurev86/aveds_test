@@ -3,7 +3,7 @@
 import { FC, AllHTMLAttributes, useEffect } from 'react';
 import c from './Modal.module.scss';
 import clsx from 'clsx';
-import { TModal, useModalStore } from '@/shared/ui/Modal';
+import { TModal, useModalStore } from '../store';
 import { createPortal } from 'react-dom';
 
 type IProps = {
@@ -35,8 +35,8 @@ const Modal: FC<IProps> = ({
 	if (!isOpened) return;
 
 	return createPortal(
-		<div className={clsx(c.wrapper, className)} {...props}>
-			<div className={c.inner}>
+		<div className={clsx(c.wrapper, className)} {...props} onClick={close}>
+			<div className={c.inner} onClick={e => e.stopPropagation()}>
 				<button className={c.close} onClick={close}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const Modal: FC<IProps> = ({
 				</button>
 				<p className={c.caption}>{caption}</p>
 				{subcaption && <p className={c.subcaption}>{subcaption}</p>}
-				{children}
+				<div className={c.content}>{children}</div>
 			</div>
 		</div>,
 		document.body,

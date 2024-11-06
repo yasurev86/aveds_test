@@ -1,2 +1,3 @@
 export * from './model/IUser';
-export * from './store/store';
+export * from './store';
+export * from './api/loginAction';

@@ -15,5 +15,19 @@
 
 .btns{
 	display: flex;
+	flex-wrap: wrap;
 	gap: 10px;
+}
+
+/* 480px */
+@media screen and (max-width: 767px){
+	.wrapper{
+		min-height: 213px;
+		gap: 44px;
+	}
+
+    .caption{
+		font-size: 28px;
+		line-height: 1.4;
+	}
 }

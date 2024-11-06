@@ -3,15 +3,29 @@
 import { FC, ButtonHTMLAttributes } from 'react';
 import c from './AuthBtn.module.scss';
 import clsx from 'clsx';
-import { useAuth } from '@/app/providers/AuthProvider/hooks/useAuth';
+import { useUserStore } from '@/entities/User';
+import { useModalStore } from '@/shared/ui/Modal';
 
 type IProps = {} & ButtonHTMLAttributes<HTMLButtonElement>;
 const AuthBtn: FC<IProps> = ({ className, ...props }) => {
-	const { isLogged } = useAuth();
+	const isLogged = useUserStore(state => state.isLogged);
+	const logOut = useUserStore(state => state.logOut);
+
+	const openModal = useModalStore(state => state.open);
+	const openLoginModal = () => openModal('login');
+
+	const clickHandler = () => {
+		if (isLogged) logOut();
+		else openLoginModal();
+	};
 
 	return (
-		<button className={clsx(c.wrapper, className)} {...props}>
-			<span>{isLogged ? 'Выйти' : 'Войти'}</span>
+		<button
+			className={clsx(c.wrapper, className)}
+			{...props}
+			onClick={clickHandler}
+		>
+			{isLogged ? 'Выйти' : 'Войти'}
 		</button>
 	);
 };
