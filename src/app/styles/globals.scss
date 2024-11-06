@@ -1,0 +1,36 @@
+:root{
+	--main-padding-y: 80px;
+	--content-padding: 10px;
+
+	--header-height: 80px;
+
+	--text: #252B42;
+
+	--accent: #FF685B;
+	--secondary: #E74040;
+}
+
+body{
+	line-height: 1;
+	font-family: $fMontserrat, Arial, sans-serif;
+	color: $text;
+}
+
+button{
+	background: none;
+	color: $accent;
+	cursor: pointer;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+.content{
+	width: 1046px;
+	max-width: calc(100% - var(--content-padding, 10px) * 2);
+	margin: 0 auto;
+	padding: var(--main-padding-y) 0;
+}
